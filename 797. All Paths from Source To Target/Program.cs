@@ -20,7 +20,6 @@
 
         void Solver(int[][] graph, int index, int target, List<int> path, List<IList<int>> paths) {
 
-            Console.WriteLine(index);
             if (index == target)
             {
                 paths.Add(new List<int>(path));
