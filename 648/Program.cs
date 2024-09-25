@@ -51,7 +51,7 @@ namespace _648
                 return;
             }
 
-           DFS(node, word, index+1, res);
+           DFS(node, word, index+1, res,size);
         }
 
         public Node BuildTrie(IList<string> words)
