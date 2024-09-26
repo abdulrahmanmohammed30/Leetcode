@@ -9,18 +9,6 @@
     }
     public class Solution
     {
-
-        public int ReverseNumber(int n)
-        {
-            int reversed = 0;
-            while (n > 0)
-            {
-                reversed = reversed * 10 + n % 10;
-                n /= 10;
-            }
-            return reversed;
-        }
-
         public int LongestCommonPrefix(int[] arr1, int[] arr2)
         {
             var root = BuildTrie(arr2);
