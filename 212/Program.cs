@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.Tracing;
 
-namespace _212_
+namespace _212
 {
     internal class Program
     {
