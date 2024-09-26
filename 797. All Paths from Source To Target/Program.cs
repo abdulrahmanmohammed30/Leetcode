@@ -1,4 +1,4 @@
-﻿namespace _797._All_Paths_from_Source_To_Target
+﻿namespace _797
 {
     internal class Program
     {

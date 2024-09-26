@@ -15,23 +15,23 @@ namespace _139
         }
     }
 
+
     public class Solution
     {
 
         public bool WordBreak(string s, IList<string> wordDict)
         {
             Node root = BuildTrie(wordDict);
-            var set = new HashSet<int>();
-            return Search(root, 0, s.Length, s, set);
+            return Search(root, 0, s.Length, s, new HashSet<int>());
         }
 
-        public bool Search(Node root,int index, int size, string searchWord, HashSet<int> set)
+        public bool Search(Node root, int index, int size, string searchWord, HashSet<int> set)
         {
-            var NextIndexes=new Stack<int>();
+            var NextIndexes = new Stack<int>();
             bool CanBeSegmented = false;
             DFS(root, index, size, searchWord, NextIndexes, ref CanBeSegmented);
 
-            if(CanBeSegmented) return true;
+            if (CanBeSegmented) return true;
 
             while (NextIndexes.TryPop(out int i))
             {
@@ -52,14 +52,14 @@ namespace _139
 
             char ch = word[index];
 
-            if (node.children[ch-'a'] == null)
+            if (node.children[ch - 'a'] == null)
                 return;
 
-            node = node.children[ch-'a'];
+            node = node.children[ch - 'a'];
             if (!string.IsNullOrEmpty(node.word))
             {
-                NextIndexes.Push(index+1);
-                if (index==size-1)
+                NextIndexes.Push(index + 1);
+                if (index == size - 1)
                 {
                     CanBeSegmented = true;
                     return;

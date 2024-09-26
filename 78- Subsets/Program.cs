@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace _78__Subsets
+namespace _78_
 {
     internal class Program
     {
@@ -76,18 +76,3 @@ namespace _78__Subsets
         }
     }
 }
-
-
-//List<int>? temp = null;
-//for (var j = 0; j < sz; j++)
-//{
-//    arr.Add(new List<int>() { nums[i], nums[j] });
-//    if (temp != null)
-//    {
-//        temp.Add(nums[j]);
-//        arr.Add(new List<int>(temp));
-
-//    }
-//    else
-//        temp = new List<int> { nums[i], nums[j] };
-//}
