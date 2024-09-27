@@ -10,8 +10,7 @@ namespace _676_
         {
             MagicDictionary obj = new MagicDictionary();
             obj.BuildDict(["hello", "hallo", "leetcode"]);
-            bool param_2 = obj.Search("hello");
-            Console.WriteLine(param_2);
+            Console.WriteLine(obj.Search("hello"));
             Console.ReadLine();
         }
     }

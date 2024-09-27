@@ -14,6 +14,7 @@
             var root = BuildTrie(arr2);
             var res = 0;
             var st = new Stack<int>();
+
             foreach (var number in arr1)
             {
                 var temp = number;

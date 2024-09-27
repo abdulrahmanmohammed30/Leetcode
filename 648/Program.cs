@@ -44,6 +44,7 @@ namespace _648
             }
 
 
+
             node = node.children[ch - 'a'];
             if (node.word != null)
             {
