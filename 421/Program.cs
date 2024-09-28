@@ -12,7 +12,7 @@ namespace _421
             {
                 Console.WriteLine(i);
             }
-            //Console.WriteLine(new Solution().FindMaximumXOR([14, 70, 53, 83, 49, 91, 36, 80, 92, 51, 66, 70]));
+            Console.WriteLine(new Solution().FindMaximumXOR([14, 70, 53, 83, 49, 91, 36, 80, 92, 51, 66, 70]));
             Console.ReadLine();
         }
     }
