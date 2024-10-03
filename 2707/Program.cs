@@ -44,7 +44,7 @@ namespace _2707
             foreach (var i in StartIndexes)
                 minSkips = Determiner(root, word, i, size, set);
 
-            minSkips=skipsCounter + Math.Min(minSkips, Determiner(root, word, index + 1, size, set));
+            minSkips=skipsCounter + Math.Min(minSkips,  1 + Determiner(root, word, index + 1, size, set));
             set[index]=minSkips;
 
             return minSkips;
