@@ -67,3 +67,63 @@ public class OptimizedSolution
         }
     }
 }
+
+
+// optimizign usage of datatype
+public class MoreOptimizedSolution
+{
+    public bool CanPartition(int[] nums)
+    {
+        checked
+        {
+            short totalSum = 0;
+            foreach (int num in nums)
+            {
+                totalSum += (short)num;
+            }
+
+            if (totalSum % 2 != 0) return false;
+
+            short target = (short)(totalSum / 2);
+            short n = (short)nums.Length;
+
+            short[] numsShort = new short[n];
+            for (int i = 0; i < n; i++)
+            {
+                numsShort[i] = (short)nums[i];
+            }
+
+            bool?[,] dp = new bool?[n, target + 1];
+            return Solver(0, target);
+
+            bool Solver(short index, short remainingTarget)
+            {
+
+                if (remainingTarget == 0) return true;
+                if (index >= n || remainingTarget < 0) return false;
+
+
+                if (dp[index, remainingTarget].HasValue)
+                    return dp[index, remainingTarget].Value;
+
+
+                bool include = false;
+                short newTarget = (short)(remainingTarget - numsShort[index]);
+                if (newTarget >= 0)
+                {
+                    include = Solver((short)(index + 1), newTarget);
+                }
+
+                if (include)
+                {
+                    dp[index, remainingTarget] = true;
+                    return true;
+                }
+
+
+                dp[index, remainingTarget] = Solver((short)(index + 1), remainingTarget);
+                return dp[index, remainingTarget].Value;
+            }
+        }
+    }
+}
