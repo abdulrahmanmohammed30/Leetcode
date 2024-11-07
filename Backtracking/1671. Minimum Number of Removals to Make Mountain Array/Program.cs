@@ -13,7 +13,6 @@ using Internal;
 // time for thinking about test cases and tracing 
 // never waste time on coding - coding should be done last 
 
-
 public class Solution
 {
     public int MinimumMountainRemovals(int[] nums)
