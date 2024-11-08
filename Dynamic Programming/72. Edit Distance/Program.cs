@@ -1,4 +1,13 @@
-﻿public class Solution
+﻿// return from other solutons to improve thinking skills, coding skills, etc
+// think about all possible cases or examples 
+// avoid toy solutions which were implemented without tracing
+// trace your solution with serveral examples 
+// ask ai chatbots to provide you with more examples 
+// save portions of code and return to it when needed such as cahe and -1 
+// develop a procedure you walk into 
+// always read others solutions and learn from to develop crucial 
+
+public class Solution
 {
     public int MinDistance(string word1, string word2)
     {
