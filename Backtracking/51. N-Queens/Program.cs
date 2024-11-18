@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace _51._N_Queens
 {
@@ -6,10 +7,13 @@ namespace _51._N_Queens
     {
         static void Main(string[] args)
         {
+            var strArr = @"//war//fight.png".Split("//");
+            Console.WriteLine(strArr[1] + " " + strArr.Count() + strArr[2]);
+            return;
             var res = new Solution().SolveNQueens(4);
             foreach (var i in res)
             {
-                foreach(var j in i)
+                foreach (var j in i)
                     Console.WriteLine(j);
                 Console.WriteLine();
                 Console.WriteLine();
@@ -30,7 +34,7 @@ namespace _51._N_Queens
             {
                 var curRes = Enumerable.Repeat(new string('.', n), n).ToList();
 
-                for (int row=1;row<=n;row++)
+                for (int row = 1; row <= n; row++)
                 {
                     (int r, int c) = solution[row];
                     curRes[r - 1] = new string('.', c - 1) + 'Q' + new string('.', n - c);
