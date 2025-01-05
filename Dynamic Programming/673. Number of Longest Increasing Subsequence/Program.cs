@@ -12,13 +12,13 @@ public class Solution
             if (idx == n)
                 return (0, 1);
 
-            if (memo[idx, prev + 1] != null)
-                return memo[idx, prev + 1].Value;
+            if (memo[idx, prev] != null)
+                return memo[idx, prev].Value;
 
             var leave = Solver(idx + 1, prev);
 
             (int, int) pick = (0, 0);
-            if (prev == -1 || nums[idx] > nums[prev])
+            if (prev == n || nums[idx] > nums[prev])
             {
                 var result = Solver(idx + 1, idx);
                 pick = (1 + result.Item1, result.Item2);
@@ -33,11 +33,11 @@ public class Solution
             if (pick.Item1 == maxLength)
                 count += pick.Item2;
 
-            memo[idx, prev + 1] = (maxLength, count);
-            return memo[idx, prev + 1].Value;
+            memo[idx, prev] = (maxLength, count);
+            return memo[idx, prev].Value;
         }
 
-        var result = Solver(0, -1);
+        var result = Solver(0, n);
         return result.Item2;
     }
 }
